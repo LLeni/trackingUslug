@@ -53,7 +53,7 @@
     </Tab>
     <Tab text="Данные">
         <AnchorPane maxHeight="Infinity" maxWidth="Infinity">
-            <TableView fx:id="tableView" AnchorPane.leftAnchor="10" AnchorPane.topAnchor="10" prefWidth="300" maxWidth="400" prefHeight="350" maxHeight="350">
+            <TableView fx:id="tableView" AnchorPane.leftAnchor="30" AnchorPane.topAnchor="50" prefWidth="300" maxWidth="400" prefHeight="350" maxHeight="350">
                 <columns>
                     <TableColumn fx:id="columnDate" text="Дата" prefWidth="100">
 
@@ -64,11 +64,14 @@
                 </columns>
             </TableView>
 
-            <Button text="Посчитать" onAction="#buildChart" prefWidth="400" AnchorPane.leftAnchor="150" AnchorPane.topAnchor="400"></Button>
+            <Button text="Построить гистограмму" onAction="#buildChart" prefWidth="300" prefHeight="100" AnchorPane.leftAnchor="400" AnchorPane.topAnchor="200" ></Button>
         </AnchorPane>
     </Tab>
     <Tab text="Руководство">
-        <TextArea editable="false" text="Если вы хотите добавить новую заявку, то во вкладке 'Добавить заявку' впишите данные и нажмите кнопку 'Добавить'">
+        <TextArea editable="false"
+                  text="Если вы хотите добавить новую заявку, то во вкладке 'Добавить заявку' впишите данные и нажмите кнопку 'Добавить'
+                        &#10;Во вкладке 'Данные' можно увидеть количество заявок в определенную дату
+                        &#10;Во вкладке 'Данные' можно нажать на кнопку 'Построить гистограмму', чтобы построился график с данными из таблицы">
 
         </TextArea>
     </Tab>

@@ -12,6 +12,7 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -40,6 +41,7 @@ public class Controller {
     private ObservableList<CountPerDate> data = FXCollections.observableArrayList();
     private Connection con;
     private boolean hasData = false;
+    private Stage mainStage;
 
     public void initialize(){
         getConnection();
@@ -130,12 +132,19 @@ public class Controller {
         ChartController chartController = loader.getController();
         chartController.setData(data);
 
-        Scene scene =  new Scene(root, 1200, 800);
+        Scene scene =  new Scene(root, 1200, 600);
 
         Stage newWindow = new Stage();
+        newWindow.initModality(Modality.WINDOW_MODAL);
+        // Specifies the owner Window (parent) for new window
+        newWindow.initOwner(mainStage);
         newWindow.setTitle("Отслеживание запросов - Гистограмма");
         newWindow.setScene(scene);
 
         newWindow.show();
+    }
+
+    public void setMainStage(Stage stage){
+        this.mainStage = stage;
     }
 }

@@ -16,7 +16,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/views/main.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/views/main.fxml"));
+        Parent root = loader.load();
+        Controller controller  = loader.getController();
+        controller.setMainStage(primaryStage);
         primaryStage.setTitle("Отслеживание заявок");
         primaryStage.setScene(new Scene(root, WIDTH_SCENE, HEIGHT_SCENE));
         primaryStage.setMinWidth(MIN_WIDTH_SCENE);
