@@ -85,6 +85,7 @@ public class Controller {
             alert.setContentText("Для продолжения нажмите кнопку 'ОК'");
             alert.show();
         } else {
+            clear();
             Request request = new Request(fieldFIO.getText(), fieldAddress.getText(), fieldContacts.getText(), fieldExecutor.getText(), fieldCondition.getText(),
                     areaDescription.getText(), getCurrentDate());
             try {
@@ -116,6 +117,16 @@ public class Controller {
         }
     }
 
+    private void clear(){
+        fieldFIO.setText("");
+        fieldAddress.setText("");
+        fieldContacts.setText("");
+        fieldExecutor.setText("");
+        fieldCondition.setText("");
+        areaDescription.setText("");
+
+    }
+
     private String getCurrentDate(){
         Calendar calendar = new GregorianCalendar();
         //System.out.println(calendar.getTime().toString());
@@ -132,13 +143,17 @@ public class Controller {
         ChartController chartController = loader.getController();
         chartController.setData(data);
 
-        Scene scene =  new Scene(root, 1200, 600);
+        Scene scene =  new Scene(root, 1200, 620);
 
         Stage newWindow = new Stage();
+        newWindow.setMaxWidth(1200);
+        newWindow.setMaxHeight(620);
+        newWindow.setMinHeight(1200);
+        newWindow.setMinHeight(620);
         newWindow.initModality(Modality.WINDOW_MODAL);
         // Specifies the owner Window (parent) for new window
         newWindow.initOwner(mainStage);
-        newWindow.setTitle("Отслеживание запросов - Гистограмма");
+        newWindow.setTitle("Отслеживание заявок - Гистограмма");
         newWindow.setScene(scene);
 
         newWindow.show();

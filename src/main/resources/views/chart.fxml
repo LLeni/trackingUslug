@@ -13,7 +13,7 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="sample.ChartController"
             prefHeight="Infinity" prefWidth="Infinity">
-    <BarChart fx:id="barChart" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="10" prefHeight="600" prefWidth="1200">
+    <BarChart fx:id="barChart" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="10" prefHeight="550" prefWidth="1150">
         <xAxis>
             <CategoryAxis side="BOTTOM" fx:id="xAxis" />
         </xAxis>

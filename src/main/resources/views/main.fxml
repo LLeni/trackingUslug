@@ -58,7 +58,7 @@
                     <TableColumn fx:id="columnDate" text="Дата" prefWidth="100">
 
                     </TableColumn>
-                    <TableColumn fx:id="columnCount" text="Количество заявок" prefWidth="200">
+                    <TableColumn fx:id="columnCount" text="Количество заявок" prefWidth="200" >
 
                     </TableColumn>
                 </columns>
