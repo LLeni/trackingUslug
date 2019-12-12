@@ -49,6 +49,8 @@ public class Controller {
         columnDate.setCellValueFactory(new PropertyValueFactory<CountPerDate, String>("date"));
         columnCount.setCellValueFactory(new PropertyValueFactory<CountPerDate, Integer>("count"));
 
+        areaDescription.setPromptText("Является необязательным полем");
+
         tableView.setItems(data);
     }
 

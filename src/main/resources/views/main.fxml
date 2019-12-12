@@ -34,21 +34,6 @@
             <Button fx:id="btnAddGame" alignment="CENTER" maxWidth="Infinity" onAction="#addRequest" text="Добавить" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.fillWidth="true" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.rowSpan="1">
 
             </Button>
-         <columnConstraints>
-            <ColumnConstraints />
-            <ColumnConstraints />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
         </GridPane>
     </Tab>
     <Tab text="Данные">
