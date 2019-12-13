@@ -20,7 +20,7 @@ public class ChartController {
 
     //                      X,       Y
     private XYChart.Series<String, Number> dataChart;
-    private ObservableList<CountPerDate> data;
+    private ObservableList<Usluga> data;
 
 
     public void initialize(){
@@ -41,10 +41,10 @@ public class ChartController {
 
     }
 
-    public void setData(ObservableList<CountPerDate> data){
-        this.data = data;
-        for (int i = 0; i < data.size(); i++) {
-            dataChart.getData().add(new XYChart.Data<>(data.get(i).getDate(), data.get(i).getCount()));
-        }
-    }
+//    public void setData(ObservableList<CountPerDate> data){
+//        this.data = data;
+//        for (int i = 0; i < data.size(); i++) {
+//            dataChart.getData().add(new XYChart.Data<>(data.get(i).getDate(), data.get(i).getCount()));
+//        }
+//    }
 }

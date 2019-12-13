@@ -21,7 +21,7 @@ public class Main extends Application {
         Parent root = loader.load();
         Controller controller  = loader.getController();
         controller.setMainStage(primaryStage);
-        primaryStage.setTitle("Отслеживание заявок");
+        primaryStage.setTitle("Услуги");
         primaryStage.setScene(new Scene(root, WIDTH_SCENE, HEIGHT_SCENE));
         primaryStage.setMinWidth(MIN_WIDTH_SCENE);
         primaryStage.setMinHeight(MIN_HEIGHT_SCENE);

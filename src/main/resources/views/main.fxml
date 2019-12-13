@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -15,11 +14,8 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<?import javafx.scene.chart.BarChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
-<TabPane maxHeight="Infinity" maxWidth="Infinity" prefHeight="Infinity" prefWidth="Infinity" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="sample.Controller">
-    <Tab text="Добавить заявку">
+<TabPane maxHeight="Infinity" maxWidth="Infinity" prefHeight="Infinity" prefWidth="Infinity" side="LEFT" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <Tab text="Добавить услугу">
         <GridPane hgap="10" vgap="10">
             <padding>
                 <Insets left="70" top="20" />
@@ -28,35 +24,51 @@
             <Label fx:id="labelAddress" prefHeight="16.0" prefWidth="75.0" text="Адрес:" GridPane.columnIndex="0" GridPane.rowIndex="2" /> <TextField fx:id="fieldAddress" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label fx:id="labelContacts" text="Контакты:" GridPane.columnIndex="0" GridPane.rowIndex="3" /> <TextField fx:id="fieldContacts" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label fx:id="labelExecutor" text="Исполнитель:" GridPane.columnIndex="0" GridPane.rowIndex="4" /> <TextField fx:id="fieldExecutor" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label fx:id="labelCondition" text="Состояние:" GridPane.columnIndex="0" GridPane.rowIndex="5" /> <TextField fx:id="fieldCondition" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="labelName" text="Услуга:" GridPane.columnIndex="0" GridPane.rowIndex="5" /> <TextField fx:id="fieldName" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label fx:id="labelDescription" text="Описание:" GridPane.columnIndex="0" GridPane.rowIndex="7" /> <TextArea fx:id="areaDescription" GridPane.columnIndex="1" GridPane.rowIndex="7" />
 
-            <Button fx:id="btnAddGame" alignment="CENTER" maxWidth="Infinity" onAction="#addRequest" text="Добавить" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.fillWidth="true" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.rowSpan="1">
+            <Button fx:id="btnAddGame" alignment="CENTER" maxWidth="Infinity" onAction="#addUslugu" text="Добавить" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.fillWidth="true" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.rowSpan="1">
 
             </Button>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
         </GridPane>
     </Tab>
     <Tab text="Данные">
         <AnchorPane maxHeight="Infinity" maxWidth="Infinity">
-            <TableView fx:id="tableView" AnchorPane.leftAnchor="30" AnchorPane.topAnchor="50" prefWidth="300" maxWidth="400" prefHeight="350" maxHeight="350">
+            <TableView fx:id="tableView" maxHeight="350" maxWidth="400" prefHeight="350" prefWidth="500" AnchorPane.leftAnchor="30" AnchorPane.topAnchor="50">
                 <columns>
-                    <TableColumn fx:id="columnDate" text="Дата" prefWidth="100">
+                    <TableColumn fx:id="columnDate" prefWidth="100" text="Дата подачи">
 
                     </TableColumn>
-                    <TableColumn fx:id="columnCount" text="Количество заявок" prefWidth="200" >
+                    <TableColumn fx:id="columnName" prefWidth="200" text="Название услуги">
+
+                    </TableColumn>
+                    <TableColumn fx:id="columnCondition" prefWidth="100" text="Выполнено">
 
                     </TableColumn>
                 </columns>
             </TableView>
 
-            <Button text="Построить гистограмму" onAction="#buildChart" prefWidth="300" prefHeight="100" AnchorPane.leftAnchor="400" AnchorPane.topAnchor="200" ></Button>
+            <Button onAction="#buildChart" prefHeight="100" prefWidth="300" text="Построить гистограмму" AnchorPane.leftAnchor="400" AnchorPane.topAnchor="200" />
+            <Button onAction="#setDone" prefHeight="20" prefWidth="90" text="Изменить" AnchorPane.leftAnchor="340" AnchorPane.topAnchor="400" />
         </AnchorPane>
     </Tab>
     <Tab text="Руководство">
-        <TextArea editable="false"
-                  text="Если вы хотите добавить новую заявку, то во вкладке 'Добавить заявку' впишите данные и нажмите кнопку 'Добавить'
-                        &#10;Во вкладке 'Данные' можно увидеть количество заявок в определенную дату
-                        &#10;Во вкладке 'Данные' можно нажать на кнопку 'Построить гистограмму', чтобы построился график с данными из таблицы">
+        <TextArea editable="false" text="Если вы хотите добавить новую заявку, то во вкладке 'Добавить заявку' впишите данные и нажмите кнопку 'Добавить'                         &#10;Во вкладке 'Данные' можно увидеть количество заявок в определенную дату                         &#10;Во вкладке 'Данные' можно нажать на кнопку 'Построить гистограмму', чтобы построился график с данными из таблицы">
 
         </TextArea>
     </Tab>
