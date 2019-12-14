@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.control.CheckBox;
 
 import java.util.GregorianCalendar;
@@ -15,7 +17,7 @@ public class Usluga {
     private String dateEnd;
     private CheckBox checkBox;
 
-    public Usluga(String FIO, String address, String contacts, String executor, String name, String description, String dateBegin, String dateEnd, String condition) {
+    public Usluga(String FIO, String address, String contacts, String executor, String name, String dateBegin, String dateEnd, String description, String condition) {
         this.FIO = FIO;
         this.address = address;
         this.contacts = contacts;
@@ -105,5 +107,13 @@ public class Usluga {
 
     public void setCheckBox(CheckBox checkBox) {
         this.checkBox = checkBox;
+    }
+
+    public String getCondition(){
+        if(checkBox.isSelected()){
+            return "Выполнено";
+        } else {
+            return "Невыполнено";
+        }
     }
 }

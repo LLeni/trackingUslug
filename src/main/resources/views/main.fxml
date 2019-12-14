@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<TabPane maxHeight="Infinity" maxWidth="Infinity" prefHeight="Infinity" prefWidth="Infinity" side="LEFT" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<TabPane fx:id="tabPane" maxHeight="Infinity" maxWidth="Infinity" prefHeight="Infinity" prefWidth="Infinity" side="LEFT" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <Tab text="Добавить услугу">
         <GridPane hgap="10" vgap="10">
             <padding>
@@ -49,7 +49,7 @@
     </Tab>
     <Tab text="Данные">
         <AnchorPane maxHeight="Infinity" maxWidth="Infinity">
-            <TableView fx:id="tableView" maxHeight="350" maxWidth="400" prefHeight="350" prefWidth="500" AnchorPane.leftAnchor="30" AnchorPane.topAnchor="50">
+            <TableView fx:id="tableView" maxHeight="350" maxWidth="400" prefHeight="350" prefWidth="500" AnchorPane.leftAnchor="150" AnchorPane.topAnchor="20">
                 <columns>
                     <TableColumn fx:id="columnDate" prefWidth="100" text="Дата подачи">
 
@@ -63,12 +63,14 @@
                 </columns>
             </TableView>
 
-            <Button onAction="#buildChart" prefHeight="100" prefWidth="300" text="Построить гистограмму" AnchorPane.leftAnchor="400" AnchorPane.topAnchor="200" />
-            <Button onAction="#setDone" prefHeight="20" prefWidth="90" text="Изменить" AnchorPane.leftAnchor="340" AnchorPane.topAnchor="400" />
+            <Button onAction="#buildChart" prefHeight="100" prefWidth="300" text="Построить гистограмму" AnchorPane.leftAnchor="200" AnchorPane.topAnchor="380" />
         </AnchorPane>
     </Tab>
     <Tab text="Руководство">
-        <TextArea editable="false" text="Если вы хотите добавить новую заявку, то во вкладке 'Добавить заявку' впишите данные и нажмите кнопку 'Добавить'                         &#10;Во вкладке 'Данные' можно увидеть количество заявок в определенную дату                         &#10;Во вкладке 'Данные' можно нажать на кнопку 'Построить гистограмму', чтобы построился график с данными из таблицы">
+        <TextArea editable="false" text="Если вы хотите добавить новую услугу, то во вкладке 'Добавить услугу' впишите данные и нажмите кнопку 'Добавить'
+                                         &#10;Во вкладке 'Данные' можно увидеть услуги: их названия, их дату подачи и их состояние
+                                        &#10;Во вкладке 'Данные' можно нажать на кнопку 'Построить гистограмму', чтобы построился график в отдельной вкладке
+                                        &#10;Этот график в себе содержит количество выполненных услуг в определенную дату">
 
         </TextArea>
     </Tab>
