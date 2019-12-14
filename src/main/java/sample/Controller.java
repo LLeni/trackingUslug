@@ -1,18 +1,12 @@
 package sample;
 
-import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -127,17 +121,6 @@ public class Controller {
 
             data.add(usluga);
             clear();
-//            boolean isChange = false;
-//            for (int i = 0; i < data.size(); i++) {
-//                if(data.get(i).getDate().equals(usluga.getDate())){
-//                    int newCount = data.get(i).getCount() + 1;
-//                    data.set(i, new CountPerDate(usluga.getDate(), newCount));
-//                    isChange = true;
-//                }
-//            }
-//            if(!isChange){
-//                data.add(new CountPerDate(usluga.getDate(), 1));
-//            }
         }
     }
 
